@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19b8eca0acd584244be14347fed024ce, type: 3}
+  m_Name: Unit_PC_Ember
+  m_EditorClassIdentifier: 
+  DisplayName: Ember
+  MaxHealth: 3
+  MoveRange: 3
+  TileDiameter: 1
+  Owner: 0
+  BoardSprite: {fileID: 21300000, guid: e0464c71f4aa0a944a1cae52ccae20aa, type: 3}
+  PortraitSprite: {fileID: 21300000, guid: 11939907c391ab940b72dd3cbe0acf52, type: 3}
+  Abilities:
+  - {fileID: 11400000, guid: 9c7aa61bd25e7a64c92e5b7b8fc17a6f, type: 2}

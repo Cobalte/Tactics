@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19b8eca0acd584244be14347fed024ce, type: 3}
+  m_Name: Unit_CPU_Jackal
+  m_EditorClassIdentifier: 
+  DisplayName: Jackal
+  MaxHealth: 8
+  MoveRange: 3
+  TileDiameter: 2
+  Owner: 1
+  BoardSprite: {fileID: 21300000, guid: 4f1fc06464802ad45ae6bca185f3799e, type: 3}
+  PortraitSprite: {fileID: 21300000, guid: 19d5f430a17144d49b9cfcf782987ed9, type: 3}
+  Abilities: []

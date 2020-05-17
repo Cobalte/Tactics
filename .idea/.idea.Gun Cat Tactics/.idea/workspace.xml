@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="22c53b3f-ca25-4471-a5d1-3f1b93ec0ace" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Units/GameBoard.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/HitLocationPanel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Units/Unit.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Terrain/BoardDirection.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Terrain/Tile.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Editor/TerrainToolsEditor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Terrain/Pathfinder.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../GunCats/Assets/Data/Abilities/SentryAttack.asset" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.rider@1.0.8/Rider/Editor/RiderInitializer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Terrain/TerrainTools.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Abilities/OperationContext.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ScriptObjects/Ability_Base.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/UIController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ScriptObjects/Unit_Base.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ScriptObjects/Op_Damage.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/DamageType.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ScriptObjects/Op_Base.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Units/UnitRoster.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/CanvasReferences.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/HealthBar.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/AbilityFrame.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/GameController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Units/Player.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/HitType.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/Scripts/TerrainTools.cs" />
+        <option value="$PROJECT_DIR$/Assets/Editor/LayoutToolsEditor.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/LayoutTools.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Layout/TerrainGenerator.cs" />
+        <option value="$PROJECT_DIR$/Assets/Editor/TerrainTools.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Layout/TerrainTools.cs" />
+        <option value="$PROJECT_DIR$/Assets/Editor/TerrainToolsEditor.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/InputHandler.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/UIStateController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Abilities/AbilityBase.cs" />
+        <option value="$PROJECT_DIR$/Assets/Abilities/Data/AbilityDataBase.cs" />
+        <option value="$PROJECT_DIR$/Assets/Abilities/Data/AbilityData_Base.cs" />
+        <option value="$PROJECT_DIR$/Assets/Units/Data/UnitData_Base.cs" />
+        <option value="$PROJECT_DIR$/Assets/Abilities/AbilityTargetRule.cs" />
+        <option value="$PROJECT_DIR$/Assets/Units/Data/Unit_Base.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Terrain/TileNeighborLink.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/AbilityFrame.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Terrain/NeighborDirection.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Terrain/NeighborLink.cs" />
+        <option value="$PROJECT_DIR$/Assets/Abilities/Data/Ability_Base.cs" />
+        <option value="$PROJECT_DIR$/Assets/Abilities/Data/Op_Base.cs" />
+        <option value="$PROJECT_DIR$/Assets/Abilities/Data/Op_Damage.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Units/Player.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/HealthBar.cs" />
+        <option value="$PROJECT_DIR$/Assets/Shaders/SpriteOutline.shader" />
+        <option value="$PROJECT_DIR$/Assets/Shaders/SpriteOutline.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ScriptObjects/Op_Base.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ScriptObjects/Op_SearchLine.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ScriptObjects/Ability_Base.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Units/BoardController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Terrain/Tile.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Units/GameBoard.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Terrain/TerrainTools.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Terrain/Pathfinder.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Game/DamageType.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Units/Unit.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Units/UnitRoster.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Game/GameController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ScriptObjects/Unit_Base.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/CanvasReferences.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Game/HitType.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Abilities/OperationContext.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ScriptObjects/Op_Damage.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/UIController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/HitLocationPanel.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1PlHvzglvlHWDlkY9CUV5xZohR5" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="Discover.Launch.Via.Unity" value="true" />
+    <property name="Rider.DefaultBreakpoints.AreToggled" value="true" />
+    <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="do_not_show_solution_notification" value="true" />
+    <property name="ignore.virus.scanning.warn.message" value="true" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="debugger.dataViews" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="BoardController.Initialize" type="DotNetStaticMethod" factoryName=".NET Static Method" temporary="true">
+      <option name="EXE_PATH" value="C:\Program Files\JetBrains\JetBrains Rider 2019.1.1\lib\ReSharperHost\JetLauncherILc.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/Assembly-CSharp.csproj" />
+      <option name="PROJECT_TFM" value=".NETFramework,Version=v4.7.1" />
+      <option name="CLASS_NAME" value="BoardController" />
+      <option name="METHOD_NAME" value="Initialize" />
+      <method v="2">
+        <option name="Build" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="userSelectedPid" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="3180">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" value="3180" />
+      <option name="userSelectedPid" value="false" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue=".NET Static Method.BoardController.Initialize" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration" cleanupOnStartRun="true">
+    <configuration>C:\Users\Cobalte\AppData\Roaming\Subversion</configuration>
+    <supportedVersion>125</supportedVersion>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="22c53b3f-ca25-4471-a5d1-3f1b93ec0ace" name="Default Changelist" comment="" />
+      <created>1564373085135</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1564373085135</updated>
+      <workItem from="1564373086571" duration="19000" />
+      <workItem from="1564373155395" duration="48000" />
+      <workItem from="1564449710850" duration="6528000" />
+      <workItem from="1564549475123" duration="3003000" />
+      <workItem from="1564715726063" duration="3990000" />
+      <workItem from="1564867110869" duration="2474000" />
+      <workItem from="1564873934140" duration="151000" />
+      <workItem from="1564890531123" duration="2418000" />
+      <workItem from="1564943310452" duration="2196000" />
+      <workItem from="1564947405982" duration="43000" />
+      <workItem from="1564970811886" duration="10283000" />
+      <workItem from="1565061072075" duration="2135000" />
+      <workItem from="1565065219799" duration="282000" />
+      <workItem from="1565141457828" duration="8490000" />
+      <workItem from="1565156703208" duration="3561000" />
+      <workItem from="1565227062225" duration="7576000" />
+      <workItem from="1565314075585" duration="6862000" />
+      <workItem from="1565502316039" duration="4246000" />
+      <workItem from="1565541727675" duration="1230000" />
+      <workItem from="1565543547455" duration="3385000" />
+      <workItem from="1565660368424" duration="29000" />
+      <workItem from="1565661524285" duration="675000" />
+      <workItem from="1565747757642" duration="740000" />
+      <workItem from="1565918165363" duration="598000" />
+      <workItem from="1565993929976" duration="4727000" />
+      <workItem from="1566004698327" duration="3566000" />
+      <workItem from="1566018619300" duration="3518000" />
+      <workItem from="1566066345655" duration="6092000" />
+      <workItem from="1566169736924" duration="4873000" />
+      <workItem from="1566279998804" duration="2184000" />
+      <workItem from="1566363350883" duration="44000" />
+      <workItem from="1566441598741" duration="126000" />
+      <workItem from="1566442007817" duration="2516000" />
+      <workItem from="1566453000555" duration="67000" />
+      <workItem from="1566453377707" duration="618000" />
+      <workItem from="1566523924157" duration="82000" />
+      <workItem from="1566524222090" duration="132000" />
+      <workItem from="1566524491542" duration="2664000" />
+      <workItem from="1566536395397" duration="863000" />
+      <workItem from="1566538161135" duration="2850000" />
+      <workItem from="1566611362189" duration="636000" />
+      <workItem from="1566613825610" duration="104000" />
+      <workItem from="1566677282357" duration="1448000" />
+      <workItem from="1566773976392" duration="2348000" />
+      <workItem from="1567050906497" duration="599000" />
+      <workItem from="1567056116089" duration="1773000" />
+      <workItem from="1567131779411" duration="3758000" />
+      <workItem from="1567215264161" duration="927000" />
+      <workItem from="1567216620400" duration="502000" />
+      <workItem from="1570322791793" duration="159000" />
+    </task>
+    <servers />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="VcsManagerConfiguration">
+    <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="true" />
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="552" y="177" key="#Notifications" />
+    <state x="552" y="177" key="#Notifications/1920.1080/1920.1080" />
+    <state width="1877" height="180" key="GridCell.Tab.0.bottom" />
+    <state width="1877" height="180" key="GridCell.Tab.0.bottom/1920.1080/1920.1080" />
+    <state width="1877" height="180" key="GridCell.Tab.0.center" />
+    <state width="1877" height="180" key="GridCell.Tab.0.center/1920.1080/1920.1080" />
+    <state width="1877" height="180" key="GridCell.Tab.0.left" />
+    <state width="1877" height="180" key="GridCell.Tab.0.left/1920.1080/1920.1080" />
+    <state width="1877" height="180" key="GridCell.Tab.0.right" />
+    <state width="1877" height="180" key="GridCell.Tab.0.right/1920.1080/1920.1080" />
+    <state x="2714" y="235" key="RiderGenerateDialog" />
+    <state x="2714" y="235" key="RiderGenerateDialog/1920.1080/1920.1080" />
+    <state x="2173" y="147" key="SettingsEditor" />
+    <state x="2173" y="147" key="SettingsEditor/1920.1080/1920.1080" />
+    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup" />
+    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup/1920.1080/1920.1080" />
+  </component>
+</project>
