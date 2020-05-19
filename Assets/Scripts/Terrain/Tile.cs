@@ -41,13 +41,7 @@ public class Tile : MonoBehaviour {
     
     //----------------------------------------------------------------------------------------------
     public Unit GetOccupyingUnit() {
-        foreach (var unit in UnitRoster.Units) {
-            if (unit.CurrentTiles.Contains(this)) {
-                return unit;
-            }
-        }
-
-        return null;
+        return UnitRoster.Units.FirstOrDefault(unit => unit.CurrentTiles.Contains(this));
     }
     
     //----------------------------------------------------------------------------------------------

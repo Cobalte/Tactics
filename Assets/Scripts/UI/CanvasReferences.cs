@@ -13,5 +13,4 @@ public class CanvasReferences : MonoBehaviour
     public Image[] abilityFrameHighlights;
     public GameObject HealthBar;
     public GameObject DebugTextPrefab;
-    public HitLocationPanel HitLocationPanel;
 }

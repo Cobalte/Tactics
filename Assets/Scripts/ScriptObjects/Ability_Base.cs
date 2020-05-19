@@ -10,6 +10,7 @@ public class Ability_Base : ScriptableObject
     public int Range;
     public Op_Base Operation;
 
+    //----------------------------------------------------------------------------------------------
     public void Execute(Tile source, Tile target) {
         BoardDirection shootDir = GameBoard.GetDirectionTowardTile(source, target);
         List<Tile> affectedTiles = GameBoard.GetAllTilesInDirection(source, shootDir, Range);

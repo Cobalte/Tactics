@@ -13,8 +13,6 @@ public static class UiController {
 
     private static bool showRouteDebug = true;
 
-    private static HitLocationPanel hitPanel => canvasReferences.HitLocationPanel;
-
     //----------------------------------------------------------------------------------------------
     public static void Initialize() {
         canvasReferences = GameObject.Find("Canvas").GetComponent<CanvasReferences>();
@@ -24,7 +22,6 @@ public static class UiController {
         
         canvasReferences.portraitBackground.SetActive(false);
         canvasReferences.lowerLeftFrame.SetActive(false);
-        hitPanel.gameObject.SetActive(false);
         hoverHighlight.SetActive(false);
 
         if (canvasReferences.abilityFrames.Length != canvasReferences.abilityIcons.Length ||
@@ -49,8 +46,6 @@ public static class UiController {
     
     //----------------------------------------------------------------------------------------------
     public static void ShowUnitPanel(Unit unit) {
-        hitPanel.gameObject.SetActive(false);
-        
         if (unit == null) {
             canvasReferences.portraitBackground.SetActive(false);
             canvasReferences.lowerLeftFrame.SetActive(false);
@@ -109,13 +104,5 @@ public static class UiController {
         for (int i = 0; i < debugRouteObjs.Count; i++) {
             MonoBehaviour.DestroyImmediate(debugRouteObjs[i]);
         }
-    }
-    
-    //----------------------------------------------------------------------------------------------
-    public static void ShowHitPanel(OperationContext context) {
-        canvasReferences.lowerLeftFrame.SetActive(false);
-        
-        hitPanel.gameObject.SetActive(true);
-        hitPanel.Show(context);
     }
 }

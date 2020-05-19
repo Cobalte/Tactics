@@ -11,7 +11,7 @@ public class Op_Damage : Op_Base
     public override void Resolve(OperationContext context) {
         Unit affectedUnit = context.Target.GetOccupyingUnit();
         if (affectedUnit != null) {
-            UiController.ShowHitPanel(context);
+            affectedUnit.TakeDamage(Amount, DamageType.Ability);
         }
     }
 }
