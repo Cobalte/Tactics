@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DisplayName: Punch
   Icon: {fileID: 21300000, guid: f05b3326343995143bce00a269530852, type: 3}
-  TargetingRule: 0
   Range: 1
-  Operation: {fileID: 11400000, guid: 6e432d75aa737b04d9a834cc1c25c05e, type: 2}
+  Damage: 2
+  Operation: {fileID: 0}

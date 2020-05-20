@@ -48,7 +48,7 @@ public static class UnitRoster
         
         GameBoard.HighlightAbilityRange(
             SelectedUnit.UnitData.Abilities[
-                canvasReferences.abilityFrames[abilityIndex].abilityIndex
+                canvasReferences.abilityFrames[abilityIndex].AbilityIndex
             ],
             SelectedUnit
         );

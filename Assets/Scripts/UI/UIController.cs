@@ -23,14 +23,6 @@ public static class UiController {
         canvasReferences.portraitBackground.SetActive(false);
         canvasReferences.lowerLeftFrame.SetActive(false);
         hoverHighlight.SetActive(false);
-
-        if (canvasReferences.abilityFrames.Length != canvasReferences.abilityIcons.Length ||
-            canvasReferences.abilityFrames.Length != canvasReferences.abilityFrameHighlights.Length) {
-
-            Debug.LogWarning("There aren't an equal number of ability frames, ability icons, " +
-                             "and ability frame highlights set up in CanvasReferences. Fix that."
-            );
-        }
     }
 
     //----------------------------------------------------------------------------------------------
@@ -61,8 +53,11 @@ public static class UiController {
         for (int i = 0; i < canvasReferences.abilityFrames.Length; i++) {
             if (i < unit.UnitData.Abilities.Length) {
                 canvasReferences.abilityFrames[i].gameObject.SetActive(true);
-                canvasReferences.abilityIcons[i].sprite = unit.UnitData.Abilities[i].Icon;
-                canvasReferences.abilityFrameHighlights[i].enabled = false;
+                canvasReferences.abilityFrames[i].Highlight.enabled = false;
+                canvasReferences.abilityFrames[i].Icon.sprite = unit.UnitData.Abilities[i].Icon;
+                canvasReferences.abilityFrames[i].NameText.text = unit.UnitData.Abilities[i].DisplayName;
+                canvasReferences.abilityFrames[i].RangeText.text = unit.UnitData.Abilities[i].Range.ToString();
+                canvasReferences.abilityFrames[i].DamageText.text = unit.UnitData.Abilities[i].Damage.ToString();
             }
         }
 
@@ -75,13 +70,13 @@ public static class UiController {
     //----------------------------------------------------------------------------------------------
     public static void ShowAbilityFrameHighlight(int frameIndex) {
         HideAbilityFrameHighlights();
-        canvasReferences.abilityFrameHighlights[frameIndex].enabled = true;
+        canvasReferences.abilityFrames[frameIndex].Highlight.enabled = true;
     }
     
     //----------------------------------------------------------------------------------------------
     public static void HideAbilityFrameHighlights() {
-        foreach (var highlight in canvasReferences.abilityFrameHighlights) {
-            highlight.enabled = false;
+        foreach (var frame in canvasReferences.abilityFrames) {
+            frame.Highlight.enabled = false;
         }
     }
     
