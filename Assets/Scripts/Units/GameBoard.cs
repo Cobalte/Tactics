@@ -18,15 +18,15 @@ public static class GameBoard
     }
 
     //----------------------------------------------------------------------------------------------
-    public static void ShowTileHighlightsForUnit(Unit unit) {
-        HideTileHighlights();
-        if (unit == null) {
+    public static void HighlightMoveRange(Unit mover) {
+        HideHighlights();
+        if (mover == null) {
             return;
         }
-        List<Tile> tiles = Pathfinder.GetTilesWithinMoveRange(
-            mover: unit,
-            moveRange: unit.UnitData.MoveRange,
-            stomp: unit.UnitData.Owner == Player.Machines
+        List<Tile> tiles = Pathfinder.GetTilesWithinRangeOfUnit(
+            unit: mover,
+            range: mover.UnitData.MoveRange,
+            allowStomps: mover.UnitData.Owner == Player.Machines
         );
         foreach (Tile tile in tiles) {
             tile.SetHighlightActive(true);
@@ -34,20 +34,20 @@ public static class GameBoard
     }
     
     //----------------------------------------------------------------------------------------------
-    public static void ShowTileHighlightsForAbility(Ability_Base ability, Unit caster) {
-        HideTileHighlights();
-        List<Tile> tiles = new List<Tile>();
-        
-        foreach (BoardDirection dir in Enum.GetValues(typeof(BoardDirection))) {
-            tiles = GetAllTilesInDirection(caster.CurrentTiles[0], dir, ability.Range);
-            foreach (Tile tile in tiles) {
-                tile.SetHighlightActive(true);
-            }
+    public static void HighlightAbilityRange(Ability_Base ability, Unit caster) {
+        HideHighlights();
+        List<Tile> tiles = Pathfinder.GetTilesWithinRangeOfUnit(
+            unit: caster,
+            range: ability.Range,
+            allowStomps: true
+        );
+        foreach (Tile tile in tiles) {
+            tile.SetHighlightActive(true);
         }
     }
     
     //----------------------------------------------------------------------------------------------
-    public static void HideTileHighlights() {
+    public static void HideHighlights() {
         foreach (Tile tile in Tiles) {
             tile.SetHighlightActive(false);
         }

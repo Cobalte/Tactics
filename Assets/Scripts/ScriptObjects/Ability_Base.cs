@@ -12,11 +12,6 @@ public class Ability_Base : ScriptableObject
 
     //----------------------------------------------------------------------------------------------
     public void Execute(Tile source, Tile target) {
-        BoardDirection shootDir = GameBoard.GetDirectionTowardTile(source, target);
-        List<Tile> affectedTiles = GameBoard.GetAllTilesInDirection(source, shootDir, Range);
-        
-        foreach (var tile in affectedTiles) {
-            Operation.Resolve(new OperationContext { Source = source, Target = tile });
-        }
+        Operation.Resolve(new OperationContext { Source = source, Target = target });
     }
 }

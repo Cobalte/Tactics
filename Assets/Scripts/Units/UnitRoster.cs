@@ -39,14 +39,14 @@ public static class UnitRoster
     public static void SelectUnit(Unit unit) {
         SelectedUnit = unit;
         UiController.ShowUnitPanel(unit);
-        GameBoard.ShowTileHighlightsForUnit(unit);
+        GameBoard.HighlightMoveRange(unit);
     }
     
     //----------------------------------------------------------------------------------------------
     public static void SelectAbilityForSelectedUnit(int abilityIndex) {
         SelectedAbility = SelectedUnit.UnitData.Abilities[abilityIndex];
         
-        GameBoard.ShowTileHighlightsForAbility(
+        GameBoard.HighlightAbilityRange(
             SelectedUnit.UnitData.Abilities[
                 canvasReferences.abilityFrames[abilityIndex].abilityIndex
             ],
@@ -113,7 +113,7 @@ public static class UnitRoster
         
         // cleanup after the ability
         SelectedAbility = null;
-        GameBoard.HideTileHighlights();
+        GameBoard.HideHighlights();
         UiController.HideAbilityFrameHighlights();
     }
     

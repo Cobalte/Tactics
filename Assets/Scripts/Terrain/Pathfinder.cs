@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public static class Pathfinder
-{
-    private static bool showgDebugMessages = false;
+public static class Pathfinder {
+    
+    private const bool showgDebugMessages = false;
 
     //----------------------------------------------------------------------------------------------
-    public static List<Tile> GetBestRoute(Unit mover, Tile dest, bool stomp) {
+    public static List<Tile> GetBestRoute(Unit mover, Tile dest, bool allowStomps) {
         List<Tile> bestRoute = new List<Tile>();
         List<Tile> nextRoute;
 
         for (int i = 0; i < mover.CurrentTiles.Count; i++) {
-            nextRoute = GetBestRoute(mover.CurrentTiles[i], dest, stomp);
+            nextRoute = GetBestRoute(mover.CurrentTiles[i], dest, allowStomps);
             if (i == 0 || nextRoute.Count < bestRoute.Count) {
                 bestRoute = nextRoute;
             }
@@ -23,7 +23,7 @@ public static class Pathfinder
     }
 
     //----------------------------------------------------------------------------------------------
-    public static List<Tile> GetBestRoute(Tile source, Tile dest, bool stomp) {
+    public static List<Tile> GetBestRoute(Tile source, Tile dest, bool allowStomps) {
         // https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm
         // https://www.youtube.com/watch?v=QhaKb5N3Hj8&index=5&list=PLbghT7MmckI55gwJLrDz0UtNfo9oC0K1Q
         
@@ -69,7 +69,7 @@ public static class Pathfinder
             Q.Remove(u);
 
             foreach (var neighbor in u.Neighbors) {
-                if (stomp || (neighbor.IsPathable && !neighbor.IsOccupied)) {
+                if (allowStomps || (neighbor.IsPathable && !neighbor.IsOccupied)) {
                     float alt = dist[u] + 1;
 
                     if (alt < dist[neighbor]) {
@@ -92,15 +92,12 @@ public static class Pathfinder
             routeList.Add(prev[curr]);
             curr = prev[curr];
         }
-        routeList.Reverse();
 
+        routeList.Reverse();
         stopwatch.Stop();
 
         if (showgDebugMessages) {
-            Debug.Log("Pathfinding took " +
-                permutations + " permutations (" +
-                stopwatch.ElapsedMilliseconds + " ms)."
-            );
+            Debug.Log("Pathfinding took " + permutations + " permutations (" + stopwatch.ElapsedMilliseconds + " ms).");
         }
 
         // why do we need to do this?
@@ -111,17 +108,17 @@ public static class Pathfinder
     }
     
     //----------------------------------------------------------------------------------------------
-    public static List<Tile> GetTilesWithinMoveRange(Unit mover, int moveRange, bool stomp) {
+    public static List<Tile> GetTilesWithinRangeOfUnit(Unit unit, int range, bool allowStomps) {
         List<(Tile, int)> tileRanges = new List<(Tile, int)>();
 
-        foreach (Tile startTile in mover.CurrentTiles) {
+        foreach (Tile startTile in unit.CurrentTiles) {
             tileRanges.Add((startTile, 0));
         
-            for (int currentRange = 0; currentRange < moveRange; currentRange++) {
+            for (int currentRange = 0; currentRange < range; currentRange++) {
                 for (int c = 0; c < tileRanges.Count; c++) {
                     if (tileRanges[c].Item2 == currentRange) {
                         foreach (Tile tile in tileRanges[c].Item1.Neighbors) {
-                            if (stomp || IsTileOpen(tile)) {
+                            if (allowStomps || IsTileOpen(tile)) {
                                 tileRanges.Add((tile, currentRange + 1));
                             }
                         }
@@ -132,7 +129,7 @@ public static class Pathfinder
 
         List<Tile> result = new List<Tile>();
         foreach((Tile tile, int _) in tileRanges) {
-            if (!result.Contains(tile) && !mover.CurrentTiles.Contains(tile)) {
+            if (!result.Contains(tile) && !unit.CurrentTiles.Contains(tile)) {
                 result.Add(tile);
             }
         }

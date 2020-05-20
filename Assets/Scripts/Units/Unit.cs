@@ -43,7 +43,7 @@ public class Unit : MonoBehaviour
         transform.position = GetCenterVector(from pos in destination
                                              select pos.transform.position);
         CurrentTiles = destination;
-        GameBoard.HideTileHighlights();
+        GameBoard.HideHighlights();
     }
     
     //----------------------------------------------------------------------------------------------
