@@ -10,6 +10,8 @@ public class Unit : MonoBehaviour
 
     public List<Tile> CurrentTiles { get; private set; }
     public int CurrentHealth { get; private set; }
+    public bool HasMoved;
+    public bool HasActed;
 
     private GameObject healthBar;
     private int pushDamageTaken = 0;

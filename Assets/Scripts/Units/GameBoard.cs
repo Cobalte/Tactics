@@ -26,7 +26,7 @@ public static class GameBoard
         List<Tile> tiles = Pathfinder.GetTilesWithinRangeOfUnit(
             unit: mover,
             range: mover.UnitData.MoveRange,
-            allowStomps: mover.UnitData.Owner == Player.Machines
+            allowStomps: mover.UnitData.Owner == Player.CpuPlayer
         );
         foreach (Tile tile in tiles) {
             tile.SetHighlightActive(true);

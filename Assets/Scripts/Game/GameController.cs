@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-public class GameController : MonoBehaviour
-{
+public class GameController : MonoBehaviour {
+    
     public GameObject HoverHighlightPrefab;
     public CanvasReferences CanvasReferences;
-
+    
     //----------------------------------------------------------------------------------------------
     public void Awake() {
         UiController.Initialize();
@@ -38,4 +38,6 @@ public class GameController : MonoBehaviour
             }
         }
     }
+    
+    //----------------------------------------------------------------------------------------------
 }

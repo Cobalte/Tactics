@@ -5,5 +5,5 @@ using UnityEngine;
 public enum Player
 {
     HumanPlayer,
-    Machines
+    CpuPlayer
 }

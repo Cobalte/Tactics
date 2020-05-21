@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Unit_CPU_Jackal
   m_EditorClassIdentifier: 
   DisplayName: Jackal
+  OwnerPlayer: 1
   MaxHealth: 8
   MoveRange: 3
   TileDiameter: 2

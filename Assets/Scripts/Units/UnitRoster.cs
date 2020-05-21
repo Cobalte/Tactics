@@ -59,7 +59,7 @@ public static class UnitRoster
     //----------------------------------------------------------------------------------------------
     public static void IssueSelectedUnitMoveOrder(Tile destination) {
         UiController.HideAbilityFrameHighlights();
-        bool stomp = SelectedUnit.UnitData.Owner == Player.Machines; 
+        bool stomp = SelectedUnit.UnitData.Owner == Player.CpuPlayer; 
         List<Tile> bestPath = Pathfinder.GetBestRoute(SelectedUnit, destination, stomp);
         
         // show route debug info, if it is enabled
@@ -105,11 +105,14 @@ public static class UnitRoster
             Vector3 tileScanPos = bestPath.Last().transform.position + startOffsetFromUnit;
             SelectedUnit.SetPosition(GameBoard.GetTilesClosetToPoint(tileScanPos, 4));
         }
+        
+        SelectedUnit.HasMoved = true;
     }
     
     //----------------------------------------------------------------------------------------------
     public static void IssueSelectedAbilityOrder(Tile targetTile) {
         SelectedAbility.Execute(SelectedUnit.CurrentTiles[0], targetTile);
+        SelectedUnit.HasActed = true;
         
         // cleanup after the ability
         SelectedAbility = null;
@@ -134,5 +137,10 @@ public static class UnitRoster
         else {
             Debug.LogWarning("Trying to push a unit off the board! PushUnit() is confused!");
         }
+    }
+    
+    //----------------------------------------------------------------------------------------------
+    public static List<Unit> GetUnitsForOwner(Player player) {
+        return Units.Where(unit => unit.UnitData.Owner == player).ToList();
     }
 }

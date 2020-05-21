@@ -18,6 +18,7 @@
             <e p="DamageType.cs" t="Include" />
             <e p="GameController.cs" t="Include" />
             <e p="HitType.cs" t="Include" />
+            <e p="TurnController.cs" t="Include" />
           </e>
           <e p="ScriptObjects" t="Include">
             <e p="Ability_Base.cs" t="Include" />
@@ -35,6 +36,7 @@
             <e p="AbilityFrame.cs" t="Include" />
             <e p="CanvasReferences.cs" t="Include" />
             <e p="HealthBar.cs" t="Include" />
+            <e p="TurnBanner.cs" t="Include" />
             <e p="UIController.cs" t="Include" />
           </e>
           <e p="Units" t="Include">
