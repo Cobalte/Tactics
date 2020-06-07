@@ -8,18 +8,14 @@ public static class Pathfinder {
     private const bool showgDebugMessages = false;
 
     //----------------------------------------------------------------------------------------------
-    public static List<Tile> GetBestRoute(Unit source, Unit dest, bool allowStomps) {
+    public static List<Tile> GetBestRoute(Unit sourceUnit, Unit destUnit, bool allowStomps) {
         List<Tile> bestRoute = new List<Tile>();
         List<Tile> nextRoute;
 
-        
-        
-        for (int i = 0; i < source.CurrentTiles.Count; i++) {
-            for (int n = 0; n < dest.CurrentTiles.Count; n++) {
-                nextRoute = GetBestRoute(source.CurrentTiles[i], dest.CurrentTiles[n], allowStomps);
-                if (i == 0 || nextRoute.Count < bestRoute.Count) {
-                    bestRoute = nextRoute;
-                }    
+        foreach (Tile destTile in destUnit.CurrentTiles) {
+            nextRoute = GetBestRoute(sourceUnit, destTile, allowStomps);
+            if (nextRoute != null && (bestRoute.Count == 0 || nextRoute.Count < bestRoute.Count)) {
+                bestRoute = nextRoute;
             }
         }
 
@@ -27,13 +23,13 @@ public static class Pathfinder {
     }
     
     //----------------------------------------------------------------------------------------------
-    public static List<Tile> GetBestRoute(Unit source, Tile dest, bool allowStomps) {
+    public static List<Tile> GetBestRoute(Unit sourceUnit, Tile destTile, bool allowStomps) {
         List<Tile> bestRoute = new List<Tile>();
         List<Tile> nextRoute;
 
-        for (int i = 0; i < source.CurrentTiles.Count; i++) {
-            nextRoute = GetBestRoute(source.CurrentTiles[i], dest, allowStomps);
-            if (nextRoute != null && (i == 0 || nextRoute.Count < bestRoute.Count)) {
+        foreach (Tile sourceTile in sourceUnit.CurrentTiles) {
+            nextRoute = GetBestRoute(sourceTile, destTile, allowStomps);
+            if (nextRoute != null && (bestRoute.Count == 0 || nextRoute.Count < bestRoute.Count)) {
                 bestRoute = nextRoute;
             }
         }
@@ -42,11 +38,11 @@ public static class Pathfinder {
     }
 
     //----------------------------------------------------------------------------------------------
-    public static List<Tile> GetBestRoute(Tile source, Tile dest, bool allowStomps) {
+    public static List<Tile> GetBestRoute(Tile sourceTile, Tile destTile, bool allowStomps) {
         // https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm
         // https://www.youtube.com/watch?v=QhaKb5N3Hj8&index=5&list=PLbghT7MmckI55gwJLrDz0UtNfo9oC0K1Q
         
-        if (source == dest) {
+        if (sourceTile == destTile) {
             return null;
         }
 
@@ -57,18 +53,18 @@ public static class Pathfinder {
         List<Tile> Q = new List<Tile>();
         int permutations = 0;
 
-        if (source == dest) {
+        if (sourceTile == destTile) {
             return new List<Tile>();
         }
 
-        // init all tiles to have infinity distance from the source
+        // init all tiles to have infinity distance from the sourceUnit
         foreach (Tile tile in GameBoard.Tiles) {
             dist[tile] = Mathf.Infinity;
             prev[tile] = null;
             Q.Add(tile);
         }
 
-        dist[source] = 0.0f;
+        dist[sourceTile] = 0.0f;
 
         while (Q.Count > 0) {
             permutations++;
@@ -81,7 +77,7 @@ public static class Pathfinder {
                 }
             }
 
-            if (u == dest) {
+            if (u == destTile) {
                 break;
             }
 
@@ -99,14 +95,14 @@ public static class Pathfinder {
             }
         }
 
-        if (prev[dest] == null) {
-            // either we have found the shortest route to dest, or there is
-            // no valid route to the dest at all.
+        if (prev[destTile] == null) {
+            // either we have found the shortest route to destUnit, or there is
+            // no valid route to the destUnit at all.
             return null;
         }
 
         // we found a valid route
-        Tile curr = dest;
+        Tile curr = destTile;
         while (curr != null) {
             routeList.Add(prev[curr]);
             curr = prev[curr];
@@ -121,7 +117,7 @@ public static class Pathfinder {
 
         // why do we need to do this?
         routeList.Remove(routeList[0]);
-        routeList.Add(dest);
+        routeList.Add(destTile);
 
         return routeList;
     }

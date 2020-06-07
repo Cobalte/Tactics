@@ -37,6 +37,14 @@ public class GameController : MonoBehaviour {
                 break;
             }
         }
+        
+        // if the player pressed 'skip turn' then skip their turn
+        if (Input.GetKeyDown(KeyCode.X)) {
+            foreach (Unit unit in UnitRoster.GetUnitsForOwner(Player.HumanPlayer)) {
+                unit.HasActed = true;
+                unit.HasMoved = true;
+            }
+        }
     }
     
     //----------------------------------------------------------------------------------------------

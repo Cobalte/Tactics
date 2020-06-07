@@ -36,6 +36,7 @@ public class AiController : MonoBehaviour {
                 // find the closest unit
                 List<Tile> route;
                 List<Tile> closestRoute = new List<Tile>();
+                Tile targetTile = unit.CurrentTiles[0]; // we have to init something - we change this soon
 
                 foreach (Unit target in UnitRoster.Units) {
                     if (target.UnitData.Owner != unit.UnitData.Owner && target.CurrentHealth > 0) {
@@ -43,21 +44,28 @@ public class AiController : MonoBehaviour {
                         Debug.Log("Distance to " + target.UnitData.DisplayName + ": " + route.Count);
                         if (closestRoute.Count == 0 || route.Count < closestRoute.Count) {
                             closestRoute = route;
+                            targetTile = closestRoute[closestRoute.Count - 1];
                         }
                     }
                 }
 
-                // verify we found a target and it's actually in range - if not, bail.
-                // since the route list includes the source and target tiles, we +2 the range here
-                if (closestRoute.Count == 0 || closestRoute.Count > ability.MoveRange + 2) {
+                // the route currently includes the tiles occupied by the source and target units. 
+                // remove those to get the tiles we actually want to move along.
+                closestRoute.RemoveAt(0);
+                closestRoute.RemoveAt(closestRoute.Count - 1);
+                
+                // verify we found a target and it's actually in range - if not, bail
+                if (closestRoute.Count > ability.MoveRange) {
                     break;
                 }
                 
-                // move to the target (not on top of them, as the last tile in the route will have you do)
-                UnitRoster.IssueSelectedUnitMoveOrder(closestRoute[closestRoute.Count - 2]);
+                // if we're not already adjacent to our target, move to them
+                if (closestRoute.Count > 0) {
+                    UnitRoster.IssueSelectedUnitMoveOrder(closestRoute[closestRoute.Count - 1]);    
+                }
                 
                 // use the ability on the tile where our target is standing
-                ability.Execute(closestRoute[closestRoute.Count - 1]);
+                ability.Execute(targetTile);
                 
                 break;
             default:

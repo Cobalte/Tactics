@@ -13533,7 +13533,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e278ff2a3fa8f0408b3be36e252a1da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DisplayTime: 2
+  DisplayTime: 1
 --- !u!1001 &1785992749
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16156,7 +16156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e278ff2a3fa8f0408b3be36e252a1da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DisplayTime: 2
+  DisplayTime: 1
 --- !u!1 &2095613702
 GameObject:
   m_ObjectHideFlags: 0
