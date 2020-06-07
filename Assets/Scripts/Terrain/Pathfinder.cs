@@ -8,13 +8,32 @@ public static class Pathfinder {
     private const bool showgDebugMessages = false;
 
     //----------------------------------------------------------------------------------------------
-    public static List<Tile> GetBestRoute(Unit mover, Tile dest, bool allowStomps) {
+    public static List<Tile> GetBestRoute(Unit source, Unit dest, bool allowStomps) {
         List<Tile> bestRoute = new List<Tile>();
         List<Tile> nextRoute;
 
-        for (int i = 0; i < mover.CurrentTiles.Count; i++) {
-            nextRoute = GetBestRoute(mover.CurrentTiles[i], dest, allowStomps);
-            if (i == 0 || nextRoute.Count < bestRoute.Count) {
+        
+        
+        for (int i = 0; i < source.CurrentTiles.Count; i++) {
+            for (int n = 0; n < dest.CurrentTiles.Count; n++) {
+                nextRoute = GetBestRoute(source.CurrentTiles[i], dest.CurrentTiles[n], allowStomps);
+                if (i == 0 || nextRoute.Count < bestRoute.Count) {
+                    bestRoute = nextRoute;
+                }    
+            }
+        }
+
+        return bestRoute.Count == 0 ? null : bestRoute;
+    }
+    
+    //----------------------------------------------------------------------------------------------
+    public static List<Tile> GetBestRoute(Unit source, Tile dest, bool allowStomps) {
+        List<Tile> bestRoute = new List<Tile>();
+        List<Tile> nextRoute;
+
+        for (int i = 0; i < source.CurrentTiles.Count; i++) {
+            nextRoute = GetBestRoute(source.CurrentTiles[i], dest, allowStomps);
+            if (nextRoute != null && (i == 0 || nextRoute.Count < bestRoute.Count)) {
                 bestRoute = nextRoute;
             }
         }
@@ -135,17 +154,6 @@ public static class Pathfinder {
         }
 
         return result;
-    }
-    
-    //----------------------------------------------------------------------------------------------
-    private static bool IsTileInTupleList(Tile tile, List<(Tile, int)> list) {
-        foreach(var tuple in list) {
-            if (tuple.Item1 == tile) {
-                return true;
-            }
-        }
-         
-        return false;
     }
     
     //----------------------------------------------------------------------------------------------

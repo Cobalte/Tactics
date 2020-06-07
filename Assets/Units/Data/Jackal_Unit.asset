@@ -10,14 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 19b8eca0acd584244be14347fed024ce, type: 3}
-  m_Name: Unit_PC_Ember
+  m_Name: Jackal_Unit
   m_EditorClassIdentifier: 
-  DisplayName: Ember
-  MaxHealth: 3
-  MoveRange: 3
-  TileDiameter: 1
-  Owner: 0
-  BoardSprite: {fileID: 21300000, guid: e0464c71f4aa0a944a1cae52ccae20aa, type: 3}
-  PortraitSprite: {fileID: 21300000, guid: 11939907c391ab940b72dd3cbe0acf52, type: 3}
-  Abilities:
-  - {fileID: 11400000, guid: 9c7aa61bd25e7a64c92e5b7b8fc17a6f, type: 2}
+  DisplayName: Jackal
+  MaxHealth: 8
+  MoveRange: 0
+  TileDiameter: 2
+  Owner: 1
+  BoardSprite: {fileID: 21300000, guid: 4f1fc06464802ad45ae6bca185f3799e, type: 3}
+  PortraitSprite: {fileID: 21300000, guid: 19d5f430a17144d49b9cfcf782987ed9, type: 3}
+  Abilities: []
+  AiAbilities:
+  - {fileID: 11400000, guid: 0ff009c402a50b54bbe5a76b501ecc73, type: 2}

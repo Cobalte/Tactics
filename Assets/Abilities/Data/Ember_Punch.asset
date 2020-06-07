@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d92817c25d80f6b4e98b8850ad550b8d, type: 3}
-  m_Name: Ember_Punch_Ability
+  m_Name: Ember_Punch
   m_EditorClassIdentifier: 
   DisplayName: Punch
   Icon: {fileID: 21300000, guid: f05b3326343995143bce00a269530852, type: 3}

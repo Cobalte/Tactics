@@ -10,14 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 19b8eca0acd584244be14347fed024ce, type: 3}
-  m_Name: Unit_CPU_Jackal
+  m_Name: Tundra_Unit
   m_EditorClassIdentifier: 
-  DisplayName: Jackal
-  OwnerPlayer: 1
-  MaxHealth: 8
+  DisplayName: Tundra
+  MaxHealth: 2
   MoveRange: 3
-  TileDiameter: 2
-  Owner: 1
-  BoardSprite: {fileID: 21300000, guid: 4f1fc06464802ad45ae6bca185f3799e, type: 3}
-  PortraitSprite: {fileID: 21300000, guid: 19d5f430a17144d49b9cfcf782987ed9, type: 3}
-  Abilities: []
+  TileDiameter: 1
+  Owner: 0
+  BoardSprite: {fileID: 21300000, guid: 5f809d1cbc531c244a87389e9573bb97, type: 3}
+  PortraitSprite: {fileID: 21300000, guid: 7f15128bd03501242b712d46ad191bc4, type: 3}
+  Abilities:
+  - {fileID: 11400000, guid: 195d3d76b0bd3f14eaeacac60a85093d, type: 2}
+  BossAbilities: []

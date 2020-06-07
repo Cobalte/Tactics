@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 19b8eca0acd584244be14347fed024ce, type: 3}
-  m_Name: Unit_PC_Sparrow
+  m_Name: Sparrow_Unit
   m_EditorClassIdentifier: 
   DisplayName: Sparrow
   MaxHealth: 2
@@ -21,3 +21,4 @@ MonoBehaviour:
   PortraitSprite: {fileID: 21300000, guid: c12f3633a98e785488587a0b81fd7845, type: 3}
   Abilities:
   - {fileID: 11400000, guid: d69929b076f5e67479300b4842c97f91, type: 2}
+  BossAbilities: []

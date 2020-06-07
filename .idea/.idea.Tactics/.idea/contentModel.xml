@@ -22,9 +22,10 @@
           </e>
           <e p="ScriptObjects" t="Include">
             <e p="Ability_Base.cs" t="Include" />
+            <e p="AiAbility.cs" t="Include" />
             <e p="Op_Base.cs" t="Include" />
             <e p="Op_Damage.cs" t="Include" />
-            <e p="Unit_Base.cs" t="Include" />
+            <e p="UnitData.cs" t="Include" />
           </e>
           <e p="Terrain" t="Include">
             <e p="BoardDirection.cs" t="Include" />
@@ -40,6 +41,7 @@
             <e p="UIController.cs" t="Include" />
           </e>
           <e p="Units" t="Include">
+            <e p="AiController.cs" t="Include" />
             <e p="GameBoard.cs" t="Include" />
             <e p="Player.cs" t="Include" />
             <e p="Unit.cs" t="Include" />

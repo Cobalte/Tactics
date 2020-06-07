@@ -10,6 +10,8 @@ public class TurnController : MonoBehaviour {
     
     public int CurrentTurn { get; private set; }
     public Player CurrentPlayer { get; private set; }
+
+    private AiController currentAi;
     
     //----------------------------------------------------------------------------------------------
     private void Awake() {
@@ -20,6 +22,30 @@ public class TurnController : MonoBehaviour {
     
     //----------------------------------------------------------------------------------------------
     private void Update() {
+        // if there's a banner visible, do nothing
+        if (PlayerTurnBanner.gameObject.activeSelf || CpuTurnBanner.gameObject.activeSelf) {
+            return;
+        }
+        
+        CheckForAi();
+        CheckForTurnTransition();
+    }
+    
+    //----------------------------------------------------------------------------------------------
+    private void CheckForAi() {
+        // do any units for the current player need to use ai?
+        foreach (Unit unit in UnitRoster.Units) {
+            if (unit.UnitData.Owner == CurrentPlayer && !unit.HasActed && !unit.HasMoved) {
+                currentAi = unit.GetComponent<AiController>();
+                if (currentAi != null) {
+                    currentAi.ExecuteTurn();
+                }
+            }
+        }
+    }
+    
+    //----------------------------------------------------------------------------------------------
+    private void CheckForTurnTransition() {
         // if any units for the current player have not yet moved or acted, do nothing
         foreach (Unit unit in UnitRoster.Units) {
             if (unit.UnitData.Owner == CurrentPlayer && (!unit.HasMoved || !unit.HasActed)) {
@@ -43,7 +69,5 @@ public class TurnController : MonoBehaviour {
             unit.HasActed = false;
             unit.HasMoved = false;
         }
-        
-        
     }
 }

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d92817c25d80f6b4e98b8850ad550b8d, type: 3}
-  m_Name: Sparrow_Laser_Ability
+  m_Name: Sparrow_Laser
   m_EditorClassIdentifier: 
   DisplayName: Laser
   Icon: {fileID: 21300000, guid: baf900308e982de4ea42a5a3007844e2, type: 3}

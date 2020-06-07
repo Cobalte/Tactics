@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Unit : MonoBehaviour
 {
-    public Unit_Base UnitData;
+    public UnitData UnitData;
 
     public List<Tile> CurrentTiles { get; private set; }
     public int CurrentHealth { get; private set; }
@@ -42,8 +42,7 @@ public class Unit : MonoBehaviour
     
     //----------------------------------------------------------------------------------------------
     public void SetPosition(List<Tile> destination) {
-        transform.position = GetCenterVector(from pos in destination
-                                             select pos.transform.position);
+        transform.position = GetCenterVector(from pos in destination select pos.transform.position);
         CurrentTiles = destination;
         GameBoard.HideHighlights();
     }

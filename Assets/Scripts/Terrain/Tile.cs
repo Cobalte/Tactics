@@ -5,6 +5,7 @@ using System.Linq;
 using UnityEngine;
 
 public class Tile : MonoBehaviour {
+    
     public List<Tile> Neighbors;
     public List<BoardDirection> NeighborDirections;
     public bool IsPathable = true;
@@ -33,6 +34,7 @@ public class Tile : MonoBehaviour {
                 Debug.LogError("User clicked a marked tile with no selected unit or ability.");
             }
         }
+        
         // if there's a unit here, select it
         else if (GetOccupyingUnit() != null) {
             UnitRoster.SelectUnit(GetOccupyingUnit());
