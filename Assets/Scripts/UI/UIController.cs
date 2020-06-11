@@ -6,21 +6,23 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public static class UiController {
+    
     private static GameController gameController;
     private static GameObject hoverHighlight;
     private static CanvasReferences canvasReferences;
     private static List<GameObject> debugRouteObjs;
+    private static UnitInfoBox unitInfoBox;
 
     private static bool showRouteDebug = true;
 
     //----------------------------------------------------------------------------------------------
     public static void Initialize() {
+        unitInfoBox = GameObject.Find("Unit Info Box").GetComponent<UnitInfoBox>();
         canvasReferences = GameObject.Find("Canvas").GetComponent<CanvasReferences>();
         gameController = GameObject.Find("Game Controller").GetComponent<GameController>();
         hoverHighlight = PrefabUtility.InstantiatePrefab(gameController.HoverHighlightPrefab) as GameObject;
         debugRouteObjs = new List<GameObject>();
         
-        canvasReferences.portraitBackground.SetActive(false);
         canvasReferences.lowerLeftFrame.SetActive(false);
         hoverHighlight.SetActive(false);
     }
@@ -39,17 +41,14 @@ public static class UiController {
     //----------------------------------------------------------------------------------------------
     public static void ShowUnitPanel(Unit unit) {
         if (unit == null) {
-            canvasReferences.portraitBackground.SetActive(false);
             canvasReferences.lowerLeftFrame.SetActive(false);
             return;
         }
         
-        // show the portrait
-        canvasReferences.portraitImage.sprite = unit.UnitData.PortraitSprite;
-        canvasReferences.portraitBackground.SetActive(true);
+        canvasReferences.lowerLeftFrame.SetActive(true);
+        unitInfoBox.ShowInfo(unit);
 
         // show as many abilities as the unit has
-        canvasReferences.lowerLeftFrame.SetActive(true);
         for (int i = 0; i < canvasReferences.abilityFrames.Length; i++) {
             if (i < unit.UnitData.Abilities.Length) {
                 canvasReferences.abilityFrames[i].gameObject.SetActive(true);
