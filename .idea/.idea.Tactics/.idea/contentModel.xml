@@ -15,7 +15,6 @@
             <e p="OperationContext.cs" t="Include" />
           </e>
           <e p="Game" t="Include">
-            <e p="DamageType.cs" t="Include" />
             <e p="GameController.cs" t="Include" />
             <e p="HitType.cs" t="Include" />
             <e p="TurnController.cs" t="Include" />
@@ -23,8 +22,6 @@
           <e p="ScriptObjects" t="Include">
             <e p="Ability_Base.cs" t="Include" />
             <e p="AiAbility.cs" t="Include" />
-            <e p="Op_Base.cs" t="Include" />
-            <e p="Op_Damage.cs" t="Include" />
             <e p="UnitData.cs" t="Include" />
           </e>
           <e p="Terrain" t="Include">
@@ -45,6 +42,7 @@
             <e p="GameBoard.cs" t="Include" />
             <e p="Player.cs" t="Include" />
             <e p="Unit.cs" t="Include" />
+            <e p="UnitBody.cs" t="Include" />
             <e p="UnitRoster.cs" t="Include" />
           </e>
         </e>

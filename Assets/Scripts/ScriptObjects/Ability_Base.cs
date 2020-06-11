@@ -9,16 +9,11 @@ public class Ability_Base : ScriptableObject {
     public Sprite Icon;
     public int Range;
     public int Damage;
-    public Op_Base Operation;
 
     //----------------------------------------------------------------------------------------------
     public void Execute(Tile source, Tile target) {
         if (target.IsOccupied) {
-            target.GetOccupyingUnit().TakeDamage(Damage, DamageType.Ability);
-        }
-        
-        if (Operation != null) {
-            Operation.Resolve(new OperationContext { Source = source, Target = target });
+            target.GetOccupyingUnit().Body.TakeDamage(Damage);
         }
     }
 }

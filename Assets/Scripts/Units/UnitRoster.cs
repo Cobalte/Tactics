@@ -29,10 +29,11 @@ public static class UnitRoster
             unit.UnitData.TileDiameter * unit.UnitData.TileDiameter
         ));
 
-        GameObject healthBar = PrefabUtility.InstantiatePrefab(canvasReferences.HealthBar) as GameObject;
-        healthBar.transform.parent = canvasReferences.transform;
-        healthBar.gameObject.name = "Health Bar: " + unit.UnitData.DisplayName;
-        healthBar.GetComponent<HealthBar>().AssignedUnit = unit;
+        // old health bars, used before body regions were created
+        //GameObject healthBar = PrefabUtility.InstantiatePrefab(canvasReferences.HealthBar) as GameObject;
+        //healthBar.transform.parent = canvasReferences.transform;
+        //healthBar.gameObject.name = "Health Bar: " + unit.UnitData.DisplayName;
+        //healthBar.GetComponent<HealthBar>().AssignedUnit = unit;
     }
     
     //----------------------------------------------------------------------------------------------
@@ -78,7 +79,7 @@ public static class UnitRoster
                 stepDirs.Add(GameBoard.GetDirectionTowardTile(bestPath[i - 1], bestPath[i]));
             }
 
-            foreach (Tile startTile in SelectedUnit.CurrentTiles) {
+            foreach (Tile startTile in SelectedUnit.Position) {
                 List<Tile> newPath = new List<Tile> { startTile };
                 foreach (BoardDirection dir in stepDirs) {
                     newPath.Add(newPath.Last().GetNeighborInDirection(dir));
@@ -111,7 +112,7 @@ public static class UnitRoster
     
     //----------------------------------------------------------------------------------------------
     public static void IssueSelectedAbilityOrder(Tile targetTile) {
-        SelectedAbility.Execute(SelectedUnit.CurrentTiles[0], targetTile);
+        SelectedAbility.Execute(SelectedUnit.Position[0], targetTile);
         SelectedUnit.HasActed = true;
         
         // cleanup after the ability
@@ -125,14 +126,14 @@ public static class UnitRoster
         if (unit.UnitData.TileDiameter > 1) {
             Debug.LogWarning("Trying to push a unit larger than 1x1! PushUnit() is confused!");
         }
-        Tile destTile = unit.CurrentTiles[0].GetNeighborInDirection(direction);
+        Tile destTile = unit.Position[0].GetNeighborInDirection(direction);
         if (destTile != null) {
             Unit dominoUnit = destTile.GetOccupyingUnit();
             if (dominoUnit != null) {
                 PushUnit(dominoUnit, direction);
             }
             unit.SetPosition(destTile);
-            unit.TakeDamage(1, DamageType.Pushed);
+            unit.Body.TakeDamage(1);
         }
         else {
             Debug.LogWarning("Trying to push a unit off the board! PushUnit() is confused!");

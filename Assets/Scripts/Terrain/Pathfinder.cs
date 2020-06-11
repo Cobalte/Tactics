@@ -12,7 +12,7 @@ public static class Pathfinder {
         List<Tile> bestRoute = new List<Tile>();
         List<Tile> nextRoute;
 
-        foreach (Tile destTile in destUnit.CurrentTiles) {
+        foreach (Tile destTile in destUnit.Position) {
             nextRoute = GetBestRoute(sourceUnit, destTile, allowStomps);
             if (nextRoute != null && (bestRoute.Count == 0 || nextRoute.Count < bestRoute.Count)) {
                 bestRoute = nextRoute;
@@ -27,7 +27,7 @@ public static class Pathfinder {
         List<Tile> bestRoute = new List<Tile>();
         List<Tile> nextRoute;
 
-        foreach (Tile sourceTile in sourceUnit.CurrentTiles) {
+        foreach (Tile sourceTile in sourceUnit.Position) {
             nextRoute = GetBestRoute(sourceTile, destTile, allowStomps);
             if (nextRoute != null && (bestRoute.Count == 0 || nextRoute.Count < bestRoute.Count)) {
                 bestRoute = nextRoute;
@@ -84,7 +84,7 @@ public static class Pathfinder {
             Q.Remove(u);
 
             foreach (var neighbor in u.Neighbors) {
-                if (allowStomps || (neighbor.IsPathable && !neighbor.IsOccupied)) {
+                if (allowStomps || (!neighbor.IsOccupied && !neighbor.IsOccupied)) {
                     float alt = dist[u] + 1;
 
                     if (alt < dist[neighbor]) {
@@ -126,14 +126,14 @@ public static class Pathfinder {
     public static List<Tile> GetTilesWithinRangeOfUnit(Unit unit, int range, bool allowStomps) {
         List<(Tile, int)> tileRanges = new List<(Tile, int)>();
 
-        foreach (Tile startTile in unit.CurrentTiles) {
+        foreach (Tile startTile in unit.Position) {
             tileRanges.Add((startTile, 0));
         
             for (int currentRange = 0; currentRange < range; currentRange++) {
                 for (int c = 0; c < tileRanges.Count; c++) {
                     if (tileRanges[c].Item2 == currentRange) {
                         foreach (Tile tile in tileRanges[c].Item1.Neighbors) {
-                            if (allowStomps || IsTileOpen(tile)) {
+                            if (allowStomps || !tile.IsOccupied) {
                                 tileRanges.Add((tile, currentRange + 1));
                             }
                         }
@@ -144,16 +144,11 @@ public static class Pathfinder {
 
         List<Tile> result = new List<Tile>();
         foreach((Tile tile, int _) in tileRanges) {
-            if (!result.Contains(tile) && !unit.CurrentTiles.Contains(tile)) {
+            if (!result.Contains(tile) && !unit.Position.Contains(tile)) {
                 result.Add(tile);
             }
         }
 
         return result;
-    }
-    
-    //----------------------------------------------------------------------------------------------
-    private static bool IsTileOpen(Tile tile) {
-        return !tile.IsOccupied && tile.IsPathable;
     }
 }

@@ -12,11 +12,13 @@ public class AiAbility : ScriptableObject {
     //----------------------------------------------------------------------------------------------
     public void Execute(Tile target) {
         if (target.IsOccupied) {
-            target.GetOccupyingUnit().TakeDamage(Damage, DamageType.Ability);
+            target.GetOccupyingUnit().Body.TakeDamage(Damage);
         }
     }
     
 }
+
+//--------------------------------------------------------------------------------------------------
 
 public enum AiAbilityTargetType {
     ClosestThreat

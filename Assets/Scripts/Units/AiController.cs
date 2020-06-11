@@ -36,7 +36,7 @@ public class AiController : MonoBehaviour {
                 // find the closest unit
                 List<Tile> route;
                 List<Tile> closestRoute = new List<Tile>();
-                Tile targetTile = unit.CurrentTiles[0]; // we have to init something - we change this soon
+                Tile targetTile = unit.Position[0]; // we have to init something - we change this soon
 
                 foreach (Unit target in UnitRoster.Units) {
                     if (target.UnitData.Owner != unit.UnitData.Owner && target.CurrentHealth > 0) {

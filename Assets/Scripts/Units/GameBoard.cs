@@ -13,7 +13,7 @@ public static class GameBoard
 
     //----------------------------------------------------------------------------------------------
     public static void Initialize() {
-        terrainTools = GameObject.Find("Terrain").GetComponent<TerrainTools>();
+        terrainTools = GameObject.Find("Game Board").GetComponent<TerrainTools>();
         Tiles = terrainTools.GetComponentsInChildren<Tile>().ToList();
     }
 

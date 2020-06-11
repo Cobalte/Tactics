@@ -8,7 +8,6 @@ public class Tile : MonoBehaviour {
     
     public List<Tile> Neighbors;
     public List<BoardDirection> NeighborDirections;
-    public bool IsPathable = true;
     public GameObject Highlight;
 
     private bool IsMarked => Highlight.activeSelf;
@@ -43,7 +42,7 @@ public class Tile : MonoBehaviour {
     
     //----------------------------------------------------------------------------------------------
     public Unit GetOccupyingUnit() {
-        return UnitRoster.Units.FirstOrDefault(unit => unit.CurrentTiles.Contains(this));
+        return UnitRoster.Units.FirstOrDefault(unit => unit.Position.Contains(this));
     }
     
     //----------------------------------------------------------------------------------------------

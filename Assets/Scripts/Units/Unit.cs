@@ -8,11 +8,13 @@ public class Unit : MonoBehaviour
 {
     public UnitData UnitData;
 
-    public List<Tile> CurrentTiles { get; private set; }
+    [HideInInspector] public bool HasMoved;
+    [HideInInspector] public bool HasActed;
+    [HideInInspector] public UnitBody Body;
+    
+    public List<Tile> Position { get; private set; }
     public int CurrentHealth { get; private set; }
-    public bool HasMoved;
-    public bool HasActed;
-
+    
     private GameObject healthBar;
     private int pushDamageTaken = 0;
 
@@ -24,17 +26,11 @@ public class Unit : MonoBehaviour
         
         UnitRoster.RegisterUnit(this);
         CurrentHealth = UnitData.MaxHealth;
+        
+        Body = new UnitBody();
+        Body.Initialize();
     }
     
-    //----------------------------------------------------------------------------------------------
-    private void Update() {
-        if (pushDamageTaken != 0) {
-            // take push damage only once per tick
-            ActuallyTakeDamage(pushDamageTaken);
-            pushDamageTaken = 0;
-        }
-    }
-
     //----------------------------------------------------------------------------------------------
     public void SetPosition(Tile destination) {
         SetPosition(new List<Tile> { destination });
@@ -43,28 +39,8 @@ public class Unit : MonoBehaviour
     //----------------------------------------------------------------------------------------------
     public void SetPosition(List<Tile> destination) {
         transform.position = GetCenterVector(from pos in destination select pos.transform.position);
-        CurrentTiles = destination;
+        Position = destination;
         GameBoard.HideHighlights();
-    }
-    
-    //----------------------------------------------------------------------------------------------
-    public void TakeDamage(int amount, DamageType type) {
-        if (type == DamageType.Pushed) {
-            pushDamageTaken = Math.Max(pushDamageTaken, amount);
-        }
-        else {
-            ActuallyTakeDamage(amount);
-        }
-    }
-    
-    //----------------------------------------------------------------------------------------------
-    private void ActuallyTakeDamage(int amount) {
-        CurrentHealth = Math.Max(CurrentHealth - amount, 0);
-        Debug.Log(UnitData.DisplayName + " took " + amount + " damage.");
-
-        if (CurrentHealth == 0) {
-            Debug.Log(UnitData.DisplayName + " falls.");
-        }
     }
     
     //----------------------------------------------------------------------------------------------
