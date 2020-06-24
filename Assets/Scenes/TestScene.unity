@@ -918,7 +918,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: OXOX
+  m_Text: 0/0
 --- !u!222 &67399333
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4550,7 +4550,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: OXOX
+  m_Text: 0/0
 --- !u!222 &563619111
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6928,7 +6928,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: OXOX
+  m_Text: 0/0
 --- !u!222 &958639044
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8222,6 +8222,7 @@ GameObject:
   - component: {fileID: 1198733278}
   - component: {fileID: 1198733277}
   - component: {fileID: 1198733279}
+  - component: {fileID: 1198733280}
   m_Layer: 0
   m_Name: Game Controller
   m_TagString: Untagged
@@ -8272,6 +8273,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerTurnBanner: {fileID: 1749221129}
   CpuTurnBanner: {fileID: 2088700711}
+--- !u!114 &1198733280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1198733276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d7f25d5ac6a83847953ab760e982172, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Injuries: []
 --- !u!1001 &1199788585
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11777,7 +11791,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: OXOX
+  m_Text: 0/0
 --- !u!222 &1472027660
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12738,7 +12752,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: OXOX
+  m_Text: 0/0
 --- !u!222 &1537604451
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -17095,7 +17109,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3949a9a025d717f46b2d2a6d6acd88f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  portraitBackground: {fileID: 45896968}
   lowerLeftFrame: {fileID: 1493053623}
   abilityFrames:
   - {fileID: 316772277}

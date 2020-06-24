@@ -41,22 +41,21 @@ public class UnitBody {
     }
     
     //----------------------------------------------------------------------------------------------
-    public int GetHealthOfRegion(BodyHitLocation location) {
-        foreach (var region in regions.Where(region => region.HitLocation == location)) {
-            return region.CurrentHealth;
-        }
-
-        return 0;
+    public int GetCurrentHealth(BodyHitLocation location) {
+        return regions.Where(region => region.HitLocation == location).Select(region => region.CurrentHealth).FirstOrDefault();
+    }
+    
+    //----------------------------------------------------------------------------------------------
+    public int GetMaxtHealth(BodyHitLocation location) {
+        return regions.Where(region => region.HitLocation == location).Select(region => region.MaxHealth).FirstOrDefault();
     }
 }
 
 //--------------------------------------------------------------------------------------------------
 public class UnitBodyRegion {
-
     public BodyHitLocation HitLocation;
     public int MaxHealth;
     public int CurrentHealth;
-
 }
 
 //--------------------------------------------------------------------------------------------------

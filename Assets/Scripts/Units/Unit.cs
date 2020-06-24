@@ -13,7 +13,6 @@ public class Unit : MonoBehaviour
     [HideInInspector] public UnitBody Body;
     
     public List<Tile> Position { get; private set; }
-    public int CurrentHealth { get; private set; }
     
     private GameObject healthBar;
     private int pushDamageTaken = 0;
@@ -25,7 +24,6 @@ public class Unit : MonoBehaviour
         }
         
         UnitRoster.RegisterUnit(this);
-        CurrentHealth = UnitData.MaxHealth;
         
         Body = new UnitBody();
         Body.Initialize();

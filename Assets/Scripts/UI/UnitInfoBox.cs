@@ -16,11 +16,16 @@ public class UnitInfoBox : MonoBehaviour {
     public void ShowInfo(Unit unit) {
 
         PortraitImage.sprite = unit.UnitData.PortraitSprite;
-        HeadHpLabel.text = unit.Body.GetHealthOfRegion(BodyHitLocation.Head).ToString();
-        TorsoHpLabel.text = unit.Body.GetHealthOfRegion(BodyHitLocation.Torso).ToString();
-        WaistHpLabel.text = unit.Body.GetHealthOfRegion(BodyHitLocation.Waist).ToString();
-        ArmsHpLabel.text = unit.Body.GetHealthOfRegion(BodyHitLocation.Arms).ToString();
-        LegsHpLabel.text = unit.Body.GetHealthOfRegion(BodyHitLocation.Legs).ToString();
+        HeadHpLabel.text = unit.Body.GetCurrentHealth(BodyHitLocation.Head) + "/" +
+                           unit.Body.GetMaxtHealth(BodyHitLocation.Head);
+        TorsoHpLabel.text = unit.Body.GetCurrentHealth(BodyHitLocation.Torso) + "/" +
+                           unit.Body.GetMaxtHealth(BodyHitLocation.Torso);
+        WaistHpLabel.text = unit.Body.GetCurrentHealth(BodyHitLocation.Waist) + "/" +
+                            unit.Body.GetMaxtHealth(BodyHitLocation.Waist);
+        ArmsHpLabel.text = unit.Body.GetCurrentHealth(BodyHitLocation.Arms) + "/" +
+                           unit.Body.GetMaxtHealth(BodyHitLocation.Arms);
+        LegsHpLabel.text = unit.Body.GetCurrentHealth(BodyHitLocation.Legs) + "/" +
+                           unit.Body.GetMaxtHealth(BodyHitLocation.Legs);
 
     }
 }

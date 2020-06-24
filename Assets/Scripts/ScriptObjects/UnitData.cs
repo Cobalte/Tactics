@@ -7,7 +7,6 @@ using UnityEngine.Serialization;
 public class UnitData : ScriptableObject {
     
     public string DisplayName = "New Unit";
-    public int MaxHealth = 1;
     public int MoveRange;
     public int TileDiameter = 1;
     public Player Owner = Player.HumanPlayer;

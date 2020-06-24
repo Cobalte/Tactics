@@ -22,6 +22,7 @@
           <e p="ScriptObjects" t="Include">
             <e p="Ability_Base.cs" t="Include" />
             <e p="AiAbility.cs" t="Include" />
+            <e p="InjuryData.cs" t="Include" />
             <e p="UnitData.cs" t="Include" />
           </e>
           <e p="Terrain" t="Include">
@@ -33,7 +34,6 @@
           <e p="UI" t="Include">
             <e p="AbilityFrame.cs" t="Include" />
             <e p="CanvasReferences.cs" t="Include" />
-            <e p="HealthBar.cs" t="Include" />
             <e p="TurnBanner.cs" t="Include" />
             <e p="UIController.cs" t="Include" />
             <e p="UnitInfoBox.cs" t="Include" />
@@ -41,6 +41,7 @@
           <e p="Units" t="Include">
             <e p="AiController.cs" t="Include" />
             <e p="GameBoard.cs" t="Include" />
+            <e p="InjuryChart.cs" t="Include" />
             <e p="Player.cs" t="Include" />
             <e p="Unit.cs" t="Include" />
             <e p="UnitBody.cs" t="Include" />

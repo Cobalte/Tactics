@@ -39,7 +39,7 @@ public class AiController : MonoBehaviour {
                 Tile targetTile = unit.Position[0]; // we have to init something - we change this soon
 
                 foreach (Unit target in UnitRoster.Units) {
-                    if (target.UnitData.Owner != unit.UnitData.Owner && target.CurrentHealth > 0) {
+                    if (target.UnitData.Owner != unit.UnitData.Owner) {
                         route = Pathfinder.GetBestRoute(unit, target, true);
                         Debug.Log("Distance to " + target.UnitData.DisplayName + ": " + route.Count);
                         if (closestRoute.Count == 0 || route.Count < closestRoute.Count) {
