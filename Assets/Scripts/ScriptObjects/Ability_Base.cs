@@ -11,9 +11,16 @@ public class Ability_Base : ScriptableObject {
     public int Damage;
 
     //----------------------------------------------------------------------------------------------
-    public void Execute(Tile source, Tile target) {
-        if (target.IsOccupied) {
-            target.GetOccupyingUnit().Body.TakeDamage(Damage);
+    public void Execute(Unit caster, Tile target) {
+        Unit targetUnit = target.GetOccupyingUnit();
+        
+        if (targetUnit != null) {
+            int damage = Damage +
+                         caster.Body.GetInjuryModifiers(InjuryEffectType.OutgoingDamage) +
+                         targetUnit.Body.GetInjuryModifiers(InjuryEffectType.IncomingDamage);
+
+            damage = Mathf.Max(damage, 0);
+            targetUnit.Body.TakeDamage(damage);
         }
     }
 }

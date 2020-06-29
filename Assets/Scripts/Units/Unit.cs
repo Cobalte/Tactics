@@ -17,6 +17,8 @@ public class Unit : MonoBehaviour
     private GameObject healthBar;
     private int pushDamageTaken = 0;
 
+    public int MoveRange => UnitData.MoveRange + Body.GetInjuryModifiers(InjuryEffectType.MovementRange);
+
     //----------------------------------------------------------------------------------------------
     private void Start() {
         if (UnitData == null) {

@@ -28,12 +28,6 @@ public static class UnitRoster
             unit.transform.position,
             unit.UnitData.TileDiameter * unit.UnitData.TileDiameter
         ));
-
-        // old health bars, used before body regions were created
-        //GameObject healthBar = PrefabUtility.InstantiatePrefab(canvasReferences.HealthBar) as GameObject;
-        //healthBar.transform.parent = canvasReferences.transform;
-        //healthBar.gameObject.name = "Health Bar: " + unit.UnitData.DisplayName;
-        //healthBar.GetComponent<HealthBar>().AssignedUnit = unit;
     }
     
     //----------------------------------------------------------------------------------------------
@@ -112,7 +106,7 @@ public static class UnitRoster
     
     //----------------------------------------------------------------------------------------------
     public static void IssueSelectedAbilityOrder(Tile targetTile) {
-        SelectedAbility.Execute(SelectedUnit.Position[0], targetTile);
+        SelectedAbility.Execute(SelectedUnit, targetTile);
         SelectedUnit.HasActed = true;
         
         // cleanup after the ability
