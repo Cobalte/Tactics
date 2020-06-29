@@ -13,9 +13,10 @@ public class Unit : MonoBehaviour
     [HideInInspector] public UnitBody Body;
     
     public List<Tile> Position { get; private set; }
+    public bool IsDead { get; private set; } 
     
     private GameObject healthBar;
-    private int pushDamageTaken = 0;
+    public CanvasReferences canvasReferences;
 
     public int MoveRange => UnitData.MoveRange + Body.GetInjuryModifiers(InjuryEffectType.MovementRange);
 
@@ -26,9 +27,8 @@ public class Unit : MonoBehaviour
         }
         
         UnitRoster.RegisterUnit(this);
-        
         Body = new UnitBody();
-        Body.Initialize();
+        Body.Initialize(this);
     }
     
     //----------------------------------------------------------------------------------------------
@@ -64,6 +64,14 @@ public class Unit : MonoBehaviour
             result += point;
         }
         return result / points.Count();
+    }
+    
+    //----------------------------------------------------------------------------------------------
+    public void Die() {
+        IsDead = true;
+        SpriteRenderer sr = GetComponentInChildren<SpriteRenderer>();
+        sr.material = canvasReferences.DeadUnitMaterial;
+        Debug.Log(UnitData.DisplayName + " has taken fatal damage and died.");
     }
 }
  

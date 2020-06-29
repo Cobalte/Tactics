@@ -1439,6 +1439,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 897e4d48433d3f74cb337d4d054fc1c6,
         type: 2}
+    - target: {fileID: 2224506585185391150, guid: fcb36b20a12b2dd40a3ceb5d0e630583,
+        type: 3}
+      propertyPath: canvasReferences
+      value: 
+      objectReference: {fileID: 2095613707}
     - target: {fileID: 2522292304424012205, guid: fcb36b20a12b2dd40a3ceb5d0e630583,
         type: 3}
       propertyPath: m_Sprite
@@ -4334,6 +4339,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: f3f5b0f27980776429d6494ce8bacf36,
         type: 2}
+    - target: {fileID: 2224506585185391150, guid: fcb36b20a12b2dd40a3ceb5d0e630583,
+        type: 3}
+      propertyPath: canvasReferences
+      value: 
+      objectReference: {fileID: 2095613707}
     - target: {fileID: 2522292304424012205, guid: fcb36b20a12b2dd40a3ceb5d0e630583,
         type: 3}
       propertyPath: m_Enabled
@@ -8409,6 +8419,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 572d7481077206645b30220ea30b4514,
         type: 2}
+    - target: {fileID: 2224506585185391150, guid: fcb36b20a12b2dd40a3ceb5d0e630583,
+        type: 3}
+      propertyPath: canvasReferences
+      value: 
+      objectReference: {fileID: 2095613707}
     - target: {fileID: 2522292304424012205, guid: fcb36b20a12b2dd40a3ceb5d0e630583,
         type: 3}
       propertyPath: m_Enabled
@@ -11516,6 +11531,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: eaa00b03c73d3184e83ae7215ada3a7e,
         type: 2}
+    - target: {fileID: 2224506585185391150, guid: fcb36b20a12b2dd40a3ceb5d0e630583,
+        type: 3}
+      propertyPath: canvasReferences
+      value: 
+      objectReference: {fileID: 2095613707}
     - target: {fileID: 2522292304424012205, guid: fcb36b20a12b2dd40a3ceb5d0e630583,
         type: 3}
       propertyPath: m_Sprite
@@ -17373,6 +17393,7 @@ MonoBehaviour:
     type: 3}
   InjuryTextReadoutObj: {fileID: 1304821161}
   InjuryTextReadoutText: {fileID: 1995404737}
+  DeadUnitMaterial: {fileID: 2100000, guid: b1a9bc3715dcb544288d1ba4f0b8b40c, type: 2}
 --- !u!1001 &2110444890
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17813,11 +17834,31 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: d514c363aab17de48924b23e39c1cf07,
         type: 2}
+    - target: {fileID: 2224506585185391150, guid: fcb36b20a12b2dd40a3ceb5d0e630583,
+        type: 3}
+      propertyPath: canvasReferences
+      value: 
+      objectReference: {fileID: 2095613707}
     - target: {fileID: 2522292304424012205, guid: fcb36b20a12b2dd40a3ceb5d0e630583,
         type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2522292304424012205, guid: fcb36b20a12b2dd40a3ceb5d0e630583,
+        type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522292304424012205, guid: fcb36b20a12b2dd40a3ceb5d0e630583,
+        type: 3}
+      propertyPath: m_FlipY
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522292304424012205, guid: fcb36b20a12b2dd40a3ceb5d0e630583,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 2688321613452975172, guid: fcb36b20a12b2dd40a3ceb5d0e630583,
         type: 3}
       propertyPath: m_SizeDelta.x

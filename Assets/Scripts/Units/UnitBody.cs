@@ -6,13 +6,16 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class UnitBody {
-    
+
+    private Unit hostUnit;
     public List<InjuryData> Injuries;
     private List<UnitBodyRegion> regions;
     private InjuryChart injuryChart;
 
     //--------------------------------------------------------------------------------------------------------
-    public void Initialize() {
+    public void Initialize(Unit host) {
+        hostUnit = host;
+        
         regions = new List<UnitBodyRegion> {
             new UnitBodyRegion {HitLocation = BodyHitLocation.Head, MaxHealth = 2, CurrentHealth = 2},
             new UnitBodyRegion {HitLocation = BodyHitLocation.Torso, MaxHealth = 2, CurrentHealth = 2},
@@ -25,7 +28,8 @@ public class UnitBody {
         injuryChart = GameObject.Find("Game Controller").GetComponent<InjuryChart>();
 
         if (injuryChart == null) {
-            throw new Exception("Unit body tried to Initialize() without an injury chart.");
+            throw new Exception("Unit body on '" + hostUnit.UnitData.name + 
+                                "' tried to Initialize() without an injury chart.");
         }
     }
 
@@ -39,9 +43,15 @@ public class UnitBody {
     public void TakeDamage(BodyHitLocation location, int amount) {
         foreach (var region in regions.Where(region => region.HitLocation == location)) {
             region.CurrentHealth = Mathf.Max(region.CurrentHealth - amount, 0);
-            Debug.Log(amount + " damage taken to " + location + " (" + region.CurrentHealth + " HP left).");
+            Debug.Log(hostUnit.UnitData.DisplayName + ": " +  amount + " damage taken to " + location);
+            
             if (region.CurrentHealth == 0) {
                 GainInjury(location);
+            }
+            
+            // if we have 3 injuries, die
+            if (Injuries.Count >= 3) {
+                hostUnit.Die();
             }
         }
     }
@@ -49,8 +59,10 @@ public class UnitBody {
     //--------------------------------------------------------------------------------------------------------
     public void GainInjury(BodyHitLocation location) {
         InjuryData injury = injuryChart.GetRandomInjury(location); 
-        Debug.Log("New " + location + " injury gained: " + injury.Name + " (" + injury.Description + ").");
         Injuries.Add(injury);
+        
+        Debug.Log(hostUnit.UnitData.DisplayName + ": New " + location + " injury gained: " + injury.Name + " (" +
+                  injury.Description + ").");
     }
     
     //--------------------------------------------------------------------------------------------------------

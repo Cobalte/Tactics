@@ -48,7 +48,7 @@ public class TurnController : MonoBehaviour {
     private void CheckForTurnTransition() {
         // if any units for the current player have not yet moved or acted, do nothing
         foreach (Unit unit in UnitRoster.Units) {
-            if (unit.UnitData.Owner == CurrentPlayer && (!unit.HasMoved || !unit.HasActed)) {
+            if (unit.UnitData.Owner == CurrentPlayer && !unit.IsDead && (!unit.HasMoved || !unit.HasActed)) {
                 return;
             }
         }

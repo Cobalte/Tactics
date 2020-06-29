@@ -25,7 +25,7 @@ public static class GameBoard
         }
         List<Tile> tiles = Pathfinder.GetTilesWithinRangeOfUnit(
             unit: mover,
-            range: mover.UnitData.MoveRange,
+            range: mover.MoveRange,
             allowStomps: mover.UnitData.Owner == Player.CpuPlayer
         );
         foreach (Tile tile in tiles) {

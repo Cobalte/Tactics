@@ -10,5 +10,6 @@ public class CanvasReferences : MonoBehaviour {
     public GameObject DebugTextPrefab;
     public GameObject InjuryTextReadoutObj;
     public Text InjuryTextReadoutText;
+    public Material DeadUnitMaterial;
 
 }

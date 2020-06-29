@@ -55,7 +55,7 @@ public class AiController : MonoBehaviour {
                 closestRoute.RemoveAt(closestRoute.Count - 1);
                 
                 // verify we found a target and it's actually in range - if not, bail
-                if (closestRoute.Count > ability.MoveRange) {
+                if (closestRoute.Count > ability.MoveRange + unit.Body.GetInjuryModifiers(InjuryEffectType.MovementRange)) {
                     break;
                 }
                 
@@ -66,7 +66,6 @@ public class AiController : MonoBehaviour {
                 
                 // use the ability on the tile where our target is standing
                 ability.Execute(targetTile);
-                
                 break;
             default:
                 Debug.LogError("Unhandled ability target type '" + ability.TargetType + "'. Skipping turn.");
