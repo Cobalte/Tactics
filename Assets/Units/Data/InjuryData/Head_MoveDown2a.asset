@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 941c8f8b388ef4b44968a2d728e3c195, type: 3}
-  m_Name: Head_DmgDown2a
+  m_Name: Head_MoveDown2a
   m_EditorClassIdentifier: 
-  Name: 
-  Description: 
-  HitLocation: 0
+  Name: Terrain Mapping Offline
+  Description: -2 Move Range
+  HitLocation: 2
   Type: 0
-  Value: 0
+  Value: -2

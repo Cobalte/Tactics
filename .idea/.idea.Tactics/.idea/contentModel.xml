@@ -34,6 +34,7 @@
           <e p="UI" t="Include">
             <e p="AbilityFrame.cs" t="Include" />
             <e p="CanvasReferences.cs" t="Include" />
+            <e p="ParentObjectResizer.cs" t="Include" />
             <e p="TurnBanner.cs" t="Include" />
             <e p="UIController.cs" t="Include" />
             <e p="UnitInfoBox.cs" t="Include" />

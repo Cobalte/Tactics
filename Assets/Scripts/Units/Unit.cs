@@ -20,7 +20,7 @@ public class Unit : MonoBehaviour
     //----------------------------------------------------------------------------------------------
     private void Start() {
         if (UnitData == null) {
-            throw new Exception("Unit '" + gameObject.name + "'tried to Start() with no unit data.");
+            throw new Exception("Unit '" + gameObject.name + "' tried to Start() with no unit data.");
         }
         
         UnitRoster.RegisterUnit(this);

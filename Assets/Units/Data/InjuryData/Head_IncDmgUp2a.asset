@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 941c8f8b388ef4b44968a2d728e3c195, type: 3}
   m_Name: Head_IncDmgUp2a
   m_EditorClassIdentifier: 
-  Name: Trauma Responder Offline
+  Name: Impact Assist Offline
   Description: +2 Incoming Damage
   HitLocation: 2
   Type: 2

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 941c8f8b388ef4b44968a2d728e3c195, type: 3}
   m_Name: Head_MissUp2a
   m_EditorClassIdentifier: 
-  Name: Predictive Assist Offline
+  Name: Predictive Assist Offine
   Description: +20% Miss
   HitLocation: 2
   Type: 3

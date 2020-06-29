@@ -47,6 +47,20 @@ public static class UiController {
         
         canvasReferences.lowerLeftFrame.SetActive(true);
         unitInfoBox.ShowInfo(unit);
+        
+        // update injury text readout
+        if (unit.Body.Injuries.Count == 0) {
+            canvasReferences.InjuryTextReadoutObj.SetActive(false);
+        }
+        else {
+            canvasReferences.InjuryTextReadoutObj.SetActive(true);
+
+            string newList = "";
+            foreach (InjuryData inj in unit.Body.Injuries) {
+                newList += inj.Name + " (" + inj.Description + ")\n";
+            }
+            canvasReferences.InjuryTextReadoutText.text = newList.Trim();
+        }
 
         // show as many abilities as the unit has
         for (int i = 0; i < canvasReferences.abilityFrames.Length; i++) {

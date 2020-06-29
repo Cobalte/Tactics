@@ -8,5 +8,7 @@ public class CanvasReferences : MonoBehaviour {
     public GameObject lowerLeftFrame;
     public AbilityFrame[] abilityFrames;
     public GameObject DebugTextPrefab;
-    
+    public GameObject InjuryTextReadoutObj;
+    public Text InjuryTextReadoutText;
+
 }
